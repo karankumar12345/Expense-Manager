@@ -13,7 +13,7 @@ const LoginRegister = () => {
     e.preventDefault();
     try {
       await account.createEmailPasswordSession(user.email, user.password);
-      navigate("/profile");
+      navigate("/");
     } catch (error) {
       console.error(error);
     }
@@ -67,6 +67,17 @@ const LoginRegister = () => {
             </button>
           </div>
         </form>
+        <div className="mt-4 text-center">
+          <p className="text-sm text-gray-600">
+            Dont's have an account?{" "}
+            <button
+              onClick={() => navigate("/signup")}
+              className="text-blue-600 hover:text-blue-800 font-semibold"
+            >
+              SignUp
+            </button>
+          </p>
+        </div>
       </div>
     </div>
   );
